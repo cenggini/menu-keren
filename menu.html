@@ -1,0 +1,501 @@
+body{
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #cdcdcd;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+a
+{
+  text-decoration: none;
+  color: #fff;
+  
+  transition: color 0.3s ease;
+}
+p{
+  position:absolute;
+  font-size:30px;
+  color:#222;
+  left:10px;
+  text-align:center;
+  top:50%;
+  font-weight:800;
+}
+
+.navigation--primary {
+  margin: 0;
+  margin-left:150px;
+  padding: 0;
+  height: 36px;
+  width: 150px;
+  list-style-type: none;
+  /* for scroll stuff */
+  display: flex;
+  overflow: auto;
+  white-space: no-wrap;
+}
+
+/* for hiding scrollbar */
+.navigation--primary::-webkit-scrollbar {
+  display: none;
+} 
+
+.navigation--primary--item {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 25px;
+  margin-right: 10px;
+  /* for scrol stuff */
+  flex: 0 0 auto;
+}
+
+/* remove gradient fade when last item reached */
+.last-and-first {
+  z-index: 9999;
+}
+a:hover
+{
+  color: tomato;
+}
+.header{
+  background:#222;
+  box-shadow: 0px 2px red;
+  width:100%;
+  height:50px;
+  position:fixed;
+  top:0;
+  z-index: 0;
+}
+.logo{
+  background:red;
+  border-radius:8px;
+  font-size:20px;
+  font-weight:800;
+  margin-right:10px;
+  float:right;
+  padding:5px;
+  margin-top:9px;
+} 
+
+#social {
+  margin: 10px -100px;
+  text-align: center;
+}
+
+.smGlobalBtn{ /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 2px 2px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 2em;
+    border-radius: 25px;
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+}
+
+/* twitter button class*/
+.twitterBtn{
+    background: #00ABE3;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099"; /* add twitter icon */
+}
+
+.twitterBtn:hover{
+      color: #00ABE3;
+      background: #fff;
+}
+
+/* google plus button class*/
+.googleplusBtn{
+    background: #e64522;
+}
+
+.googleplusBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d5"; /* add googleplus icon */
+}
+
+.googleplusBtn:hover{
+      color: #e64522;
+      background: #fff;
+}
+
+/* linkedin button class*/
+.linkedinBtn{
+    background: #0094BC;
+}
+
+.linkedinBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0e1"; /* add linkedin icon */
+}
+
+.linkedinBtn:hover{
+      color: #0094BC;
+      background: #fff;
+}
+
+/* pinterest button class*/
+.pinterestBtn{
+    background: #cb2027;
+}
+
+.pinterestBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d2"; /* add pinterest icon */
+}
+
+.pinterestBtn:hover{
+      color: #cb2027;
+      background: #fff;
+}
+
+/* tumblr button class*/
+.tumblrBtn{
+    background: #3a5876;
+}
+
+.tumblrBtn:before{
+      font-family: "FontAwesome";
+      content: "\f173"; /* add tumblr icon */
+}
+
+.tumblrBtn:hover{
+      color: #3a5876;
+      background: #fff;
+}
+
+/* rss button class*/
+.rssBtn{
+    background: #e88845;
+}
+
+.rssBtn:before{
+      font-family: "FontAwesome";
+      content: "\f09e"; /* add rss icon */
+}
+
+.rssBtn:hover{
+      color: #e88845;
+      background: #fff;
+}
+#menuToggle
+{
+  display: block;
+  position: fixed;
+  top: 18px;
+  left: 16px;
+  
+  z-index: 1003;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: fixed;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 1004; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+#menuToggle span
+{
+  display: block;
+  width: 27px;
+  height: 2px;
+  font-weight:300;
+  margin-bottom: 4px;
+  position: relative;
+  
+  background: #3498db;
+  border-radius: 4px;
+  
+  z-index: 1003;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #ff0000;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(2.22, 1.14);
+}
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, 2px);
+}
+
+#menu
+{
+  position: absolute;
+  width: 271px;
+  height: 600px;
+  max-height: 1800px;
+  min-height: 1800px;
+  margin: -100px 0 0 -50px;
+  padding: 45px;
+  padding-top: 110px;
+  
+  background:rgba(0,0,0,0.9);
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, -100%);
+  
+  transition: transform 0.9s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 5px 0;
+  font-size: 16px;
+  color: #fff;
+  width:155px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+@media screen and (max-width:320px){
+.header{
+  background:#fff;
+  box-shadow: 0px 2px red;
+  width:100%;
+  height:45px;
+  position:fixed;
+  top:0;
+  z-index: 0;
+}
+.logo{
+  background:#099;
+  box-shadow:0px 3px 5px #888;
+  border-radius:8px;
+  font-size:16px;
+  font-weight:700;
+  float:right;
+  padding:3px;
+  margin-top:11px;
+} 
+#social {
+  margin: 13px 10px;
+  text-align: center;
+}
+
+.smGlobalBtn{ /* global button class */
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 2px 2px #999;
+    padding: 0px;
+    text-decoration: none;
+    text-align: center;
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+    line-height: 2em;
+    z-index:5;
+    border-radius: 25px;
+    -moz-border-radius:25px;
+    -webkit-border-radius:25px;
+}
+
+/* facebook button class*/
+.facebookBtn{
+    background: #4060A5;
+}
+
+.facebookBtn:before{ /* use :before to add the relevant icons */
+    font-family: "FontAwesome";
+    content: "\f09a"; /* add facebook icon */
+}
+
+.facebookBtn:hover{
+    color: #4060A5;
+    background: #fff;
+}
+
+/* twitter button class*/
+.twitterBtn{
+    background: #00ABE3;
+}
+
+.twitterBtn:before{
+      font-family: "FontAwesome";
+      content: "\f099"; /* add twitter icon */
+}
+
+.twitterBtn:hover{
+      color: #00ABE3;
+      background: #fff;
+}
+
+/* google plus button class*/
+.googleplusBtn{
+    background: #e64522;
+}
+
+.googleplusBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d5"; /* add googleplus icon */
+}
+
+.googleplusBtn:hover{
+      color: #e64522;
+      background: #fff;
+}
+
+/* linkedin button class*/
+.linkedinBtn{
+    background: #0094BC;
+}
+
+.linkedinBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0e1"; /* add linkedin icon */
+}
+
+.linkedinBtn:hover{
+      color: #0094BC;
+      background: #fff;
+}
+
+/* pinterest button class*/
+.pinterestBtn{
+    background: #cb2027;
+}
+
+.pinterestBtn:before{
+      font-family: "FontAwesome";
+      content: "\f0d2"; /* add pinterest icon */
+}
+
+.pinterestBtn:hover{
+      color: #cb2027;
+      background: #fff;
+}
+
+/* tumblr button class*/
+.tumblrBtn{
+    background: #3a5876;
+}
+
+.tumblrBtn:before{
+      font-family: "FontAwesome";
+      content: "\f173"; /* add tumblr icon */
+}
+
+.tumblrBtn:hover{
+      color: #3a5876;
+      background: #fff;
+}
+
+/* rss button class*/
+.rssBtn{
+    background: #e88845;
+}
+
+.rssBtn:before{
+      font-family: "FontAwesome";
+      content: "\f09e"; /* add rss icon */
+}
+
+.rssBtn:hover{
+      color: #e88845;
+      background: #fff;
+}
+.navigation--primary {
+  margin: 0;
+  margin-left:50px;
+  padding: 0;
+  height: 36px;
+  width: 100px;
+  list-style-type: none;
+  /* for scroll stuff */
+  display: flex;
+  overflow: auto;
+  white-space: no-wrap;
+}
+
+/* for hiding scrollbar */
+.navigation--primary::-webkit-scrollbar {
+  display: none;
+} 
+.navigation--primary--item {
+  display: inline-block;
+  color: #fff;
+  font-size: 14px;
+  line-height: 25px;
+  margin-right: 10px;
+  /* for scrol stuff */
+  flex: 0 0 auto;
+}
+
+/* remove gradient fade when last item reached */
+.last-and-first {
+  z-index: 9999;
+}
+}
